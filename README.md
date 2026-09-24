@@ -61,7 +61,7 @@ Mesh repair + optional smoothing
 
 This repository contains the implementation for a research project on **3D visualization of brain tumors from multimodal MRI segmentation**, including reconstruction of anatomical and tumor surfaces for subsequent immersive visualization workflows.
 
-The repository is intentionally limited to the reconstruction/visualization stage represented by the supplied implementation. AR/VR integration is not claimed here unless corresponding source code is added.
+The project includes an implemented AR/VR visualization stage. The reconstructed brain and tumor models were integrated into immersive visualization workflows using Unity/ARCore and Adobe Aero, with the final AR workflow supporting interactive scaling, rotation, and placement in real-world space.
 
 The associated manuscript is **not yet published**. Research descriptions and results should therefore be treated as work associated with the project rather than as published claims.
 
@@ -119,8 +119,8 @@ Run the reconstruction script:
 
 ```bash
 python scripts/reconstruct_brain.py \
-  --t1ce data/patient_t1ce.nii \
-  --tumor data/patient_tumor_only.nii \
+  --t1ce /path/to/patient_t1ce.nii \
+  --tumor /path/to/patient_tumor_only.nii \
   --output outputs
 ```
 
@@ -178,8 +178,6 @@ brain-tumor-3d-reconstruction/
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
-├── data/
-│   └── README.md
 ├── outputs/
 │   └── README.md
 ├── configs/
@@ -198,13 +196,17 @@ brain-tumor-3d-reconstruction/
     └── methodology.md
 ```
 
+## AR/VR Visualization
+
+The research implementation extends the reconstruction pipeline into an AR visualization workflow. Reconstructed brain and tumor meshes are prepared for immersive visualization and were deployed through Unity with ARCore before transitioning to Adobe Aero to address rendering stability, interaction, and cross-platform deployment considerations. The final workflow supports interactive scaling, rotation, and repositioning of the patient-specific 3D brain model in real-world space.
+
 ## Roadmap
 
 - Add support for additional MRI modalities
 - Add explicit affine/orientation validation
 - Add quantitative mesh-quality measurements
 - Add reproducible parameter configuration
-- Add Unity/AR export workflow
+- Further refine the existing AR/VR visualization workflow
 - Add support for standardized research datasets
 
 ## Author
