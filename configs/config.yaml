@@ -1,0 +1,9 @@
+brain_percentile: 55
+brain_marching_level: 0.25
+tumor_marching_level: 0.30
+mri_gaussian_sigma: 0.7
+tumor_gaussian_sigma: 1.0
+anisotropic_iterations: 15
+anisotropic_kappa: 30
+anisotropic_gamma: 0.2
+open3d_smoothing_iterations: 5
